@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="toggle" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac metus ac ipsum suscipit iaculis consectetur et ipsum. Quisque tincidunt dapibus congue. Pellentesque sit amet sapien blandit, porta sem vel, commodo ante. Praesent in est at sem bibendum placerat id ut orci. Suspendisse condimentum lorem ligula, at pellentesque purus tempor egestas. Mauris lobortis dolor sit amet nunc consectetur, a scelerisque velit eleifend. Proin molestie urna nec enim elementum hendrerit eu non massa. Nulla ut dui eget ligula maximus blandit non eget urna. Aliquam placerat et magna eget vulputate.</p>
+    <button onclick="toggle(this)">Ocultar</button>
+    <script>
+        toggle = function(btn) {
+            btn.innerHTML = btn.innerHTML == 'Ocultar' ? 'Mostrar' : 'Ocultar';
+            p = document.getElementById('toggle');
+            p.style.display = p.style.display == 'block' ? 'none' : 'block';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="palavra">É palíndromo?</label>
+        <input type="text" id="palavra" name="palavra">
+        <button type="button" onclick="checkForm()">Verificar</button>
+    </form>
+    <script>
+        checkForm = function() {
+            palavra = document.getElementById('palavra');
+            reversedWord = palavra.value.split('').reverse().join('');
+            txt = '';
+            if (palavra.value == reversedWord) {
+                txt = 'A palavra ' + palavra.value + ' é um palíndromo.';
+            } else {
+                txt = 'A palavra ' + palavra.value + ' não é um palíndromo.';
+            }
+            alert(txt);
+        }
+    </script>
+</body>
+</html>

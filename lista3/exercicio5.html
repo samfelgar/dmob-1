@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" onsubmit="return checkForm()" method="post">
+        <div>
+            <label for="login">Login</label>
+            <input type="text" id="login" name="login">
+        </div>
+        <div>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="confirm-password">Confirme a senha</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+        </div>
+        <div>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+    <script>
+        checkForm = function() {
+            login = document.getElementById('login');
+            password = document.getElementById('password');
+            confirmPass = document.getElementById('confirm-password');
+            if (login.value == '') {
+                alert('Preencha do campo login');
+                login.focus();
+                return false;
+            } else if (password.value == '') {
+                alert('Preencha do campo senha');
+                password.focus();
+                return false;
+            } else if (password.value != confirmPass.value) {
+                alert('As senhas devem ser iguais');
+                confirmPass.focus();
+                return false;
+            } else if (password.value.length < 6 || password.value.length > 10) {
+                alert('A senha deve possuir entre 6 e 10 caracteres');
+                password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="post">
+        <div>
+            <label for="nome1">Nome 1</label>
+            <input type="text" id="nome1" name="nome1">
+        </div>
+        <div>
+            <label for="nome2">Nome 2</label>
+            <input type="text" id="nome2" name="nome2">
+        </div>
+        <div>
+            <label for="nome3">Nome 3</label>
+            <input type="text" id="nome3" name="nome3">
+        </div>
+        <div>
+            <label for="nome4">Nome 4</label>
+            <input type="text" id="nome4" name="nome4">
+        </div>
+        <div>
+            <label for="nome5">Nome 5</label>
+            <input type="text" id="nome5" name="nome5">
+        </div>
+        <div>
+            <button type="button" onclick="checkForm()">Inverter</button>
+        </div>
+    </form>
+    <script>
+        checkForm = function() {
+            nomes = document.getElementsByTagName('input');
+            newNames = [];
+            for (i = nomes.length - 1; i >= 0; i--) {
+                newNames.push(nomes[i].value);
+            }
+            for (i = 0; i < nomes.length; i++) {
+                nomes[i].value = newNames[i];
+            }
+        }
+    </script>
+</body>
+</html>

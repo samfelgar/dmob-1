@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="post">
+        <div>
+            <label for="nome1">Nome 1</label>
+            <input type="text" id="nome1" name="nome1">
+        </div>
+        <div>
+            <label for="nome2">Nome 2</label>
+            <input type="text" id="nome2" name="nome2">
+        </div>
+        <div>
+            <label for="intercaladas">Intercaladas</label>
+            <input type="text" id="intercaladas" name="intercaladas" disabled="disabled">
+        </div>
+        <div>
+            <button type="button" onclick="intercalar()">Intercalar</button>
+        </div>
+    </form>
+    <script>
+        intercalar = function() {
+            nome1 = document.querySelector('#nome1');
+            n1arr = nome1.value.split('');
+            nome2 = document.querySelector('#nome2');
+            n2arr = nome2.value.split('');
+            resultado = document.querySelector('#intercaladas');
+            resultArray = [];
+            if (nome1.value.length < nome2.value.length) {
+                for (i = 0; i < nome1.value.length; i++) {
+                    resultArray.push(n1arr.shift());
+                    resultArray.push(n2arr.shift());
+                }
+                resultArray = resultArray.concat(n2arr);
+            } else if (nome1.value.length > nome2.value.length) {
+                for (i = 0; i < nome2.value.length; i++) {
+                    resultArray.push(n1arr.shift());
+                    resultArray.push(n2arr.shift());
+                }
+                resultArray = resultArray.concat(n1arr);
+            } else {
+                for (i = 0; i < nome1.value.length; i++) {
+                    resultArray.push(n1arr.shift());
+                    resultArray.push(n2arr.shift());
+                }
+            }
+            resultado.value = resultArray.join('');
+        }
+    </script>
+</body>
+</html>
